@@ -1,3 +1,5 @@
+//Vista de producto
+
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';  // <-- IMPORTA useNavigate
 import "bootstrap/dist/css/bootstrap.min.css";
