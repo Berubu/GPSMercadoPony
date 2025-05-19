@@ -7,7 +7,7 @@ global.fetch = jest.fn(() =>
     json: () => Promise.resolve({ nombreProducto: 'Producto 1', precio: 100, descripcion: 'Descripción del producto', idUsuario: 1 }),
   })
 );
-
+//descripcion sobre los porductos 
 describe('VistaProducto', () => {
   test('muestra "Cargando..." mientras los datos se están cargando', () => {
     render(<VistaProducto />);

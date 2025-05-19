@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+//creamos los usarios para la plataformas 
 export default function SignupForm() {
   const [formData, setFormData] = useState({
     NombreUsuario: '',

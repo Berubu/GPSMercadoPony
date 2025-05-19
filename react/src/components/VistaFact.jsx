@@ -4,7 +4,7 @@ import FooterComponent from './Footer';
 
 function VistaFact() {
   const [urlFactura, setUrlFactura] = useState(null);
-
+//aqui se hace lo de factura llamando la api externa para poderla descargar
   const descargarFactura = async () => {
     try {
       const response = await fetch('http://127.0.0.1:8000/api/generar-factura/RFC_O_CURP');
