@@ -1,4 +1,8 @@
-import React from 'react';
+
+//Esta clase sirve para la cuenta
+
+
+
 
 const PerfilUsuario = () => {
   return (
@@ -12,11 +16,30 @@ const PerfilUsuario = () => {
         </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
         <div className="flex flex-col gap-4">
           <button className="bg-custom-blue text-white py-3 rounded-lg">Compras realizadas</button>
           <button className="bg-custom-blue text-white py-3 rounded-lg">Mis productos</button>
           <button className="bg-custom-blue text-white py-3 rounded-lg">Mis facturas</button>
         </div>
+
+
+
+
+
+
+
 
 
         <button className="bg-red-700 text-white py-3 rounded-lg mt-6 w-full">
