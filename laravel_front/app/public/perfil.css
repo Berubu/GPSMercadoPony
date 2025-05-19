@@ -1,0 +1,103 @@
+.Perfilusuario {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.profile {
+    margin: 50px 0; /* Reducido para mejor alineación */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.EditorP {
+    background-color: #ffffff;
+    text-align: center;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.profileImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    background-color: #2b56d6;
+}
+
+.placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #2b56d6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+
+}
+
+.buttonCF,
+.buttonDel
+ {
+    width: 300px; /* Ancho uniforme para todos los botones */
+    color: white;
+    background-color: #072fa8;
+    padding: 10px;
+    margin: 10px auto; /* Centra el botón horizontalmente */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+
+.buttonProducts,
+.buttonFacturas,
+.buttonCompras,
+.buttonEliminar {
+    width: 350px; /* Ancho uniforme para todos los botones */
+    color: white;
+    background-color: #072fa8;
+    padding: 10px;
+    margin: 10px auto; /* Centra el botón horizontalmente */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.buttonEliminar {
+    background-color: red;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.app {
+    background-color: #ffffff;
+    border-radius: 25px; /* Bordes redondeados */
+    padding: 50px; /* Espaciado interior */
+    max-width: 500px; /* Ancho fijo para centrar el contenido */
+    margin: 50px auto; /* Centra el contenido */
+    text-align: center;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+body {
+    background-color: #222222;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+}

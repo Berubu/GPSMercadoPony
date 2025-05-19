@@ -1,0 +1,77 @@
+stages:
+  - configure
+  - testing
+
+# Imagen base que contiene PHP 8.2 y PostgreSQL
+image: php:8.2
+
+# Servicios necesarios
+services:
+  - postgres:latest
+
+# Variables de entorno
+variables:
+  POSTGRES_DB: mercadoPonyss
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: 21121570
+  DB_PORT: 5432
+  DB_HOST: postgres
+  DB_DATABASE: mercadoPonyss
+  DB_USERNAME: postgres
+  DB_PASSWORD: 21121570
+
+before_script:
+  # Instalar dependencias necesarias
+  - apt-get update && apt-get install -y libpq-dev unzip curl git
+  - docker-php-ext-install pdo_pgsql
+  # Instalar Composer si no está presente
+  - curl -sS https://getcomposer.org/installer | php
+  - mv composer.phar /usr/local/bin/composer
+  # Instalar Node.js
+  - curl -sL https://deb.nodesource.com/setup_20.x | bash -
+  - apt-get update && apt-get install -y nodejs
+
+configure-job:
+  stage: configure
+  script:
+    - cd laravel_front
+    - echo "Configurando el entorno..."
+    - cp .env.example .env
+    - echo "APP_ENV=testing" >> .env
+    - echo "DB_CONNECTION=pgsql" >> .env
+    - echo "DB_HOST=$DB_HOST" >> .env
+    - echo "DB_PORT=$DB_PORT" >> .env
+    - echo "DB_DATABASE=$POSTGRES_DB" >> .env
+    - echo "DB_USERNAME=$POSTGRES_USER" >> .env
+    - echo "DB_PASSWORD=$POSTGRES_PASSWORD" >> .env
+    - cat .env
+    # Instalar dependencias de Composer y NPM
+    - composer install --no-interaction --prefer-dist
+    - npm install
+    - npm run build
+    # Configuración de Laravel
+    - php artisan key:generate
+    - php artisan migrate:fresh --seed
+    - php artisan storage:link
+    - php artisan cache:clear
+    - echo "Entorno configurado correctamente."
+
+testing-job:
+  stage: testing
+  script:
+    - cd laravel_front
+    - echo "Iniciando pruebas..."
+    # Asegurarse de que Composer y sus dependencias estén cargadas
+    - composer install --no-interaction --prefer-dist
+    - php artisan test --filter=UpdatePasswordTest
+  dependencies:
+    - configure-job
+
+cache:
+  # Caché de dependencias para evitar tener que descargarlas cada vez
+  paths:
+    - vendor/
+    - node_modules/
+    - ~/.composer/cache  # Caché de Composer
+    - ~/.npm  # Caché de NPM
+

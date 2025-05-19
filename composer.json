@@ -1,0 +1,9 @@
+{
+    "name": "dell/mercadopony",
+    "autoload": {
+        "psr-4": {
+            "Dell\\Mercadopony\\": "src/"
+        }
+    },
+    "require": {}
+}
