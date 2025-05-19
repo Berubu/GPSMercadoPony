@@ -1,7 +1,14 @@
+//Vista de compra con vista al producto
+
+
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';  // <-- Importa useNavigate
 import "bootstrap/dist/css/bootstrap.min.css";
+
+
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+
 import '../scss/styles.scss';
 import HeaderComponent from './Header';
 import FooterComponent from './Footer';
@@ -9,20 +16,27 @@ import FooterComponent from './Footer';
 function VistaCompra() {
     const { id } = useParams();
     const navigate = useNavigate();           // <-- Hook para navegar
+
     const [producto, setProducto] = useState(null);
+
     const [loading, setLoading] = useState(true);
     const [envio, setEnvio] = useState(50); // Iniciamos con envío a domicilio seleccionado
     
     useEffect(() => {
+
         fetch(`http://127.0.0.1:8000/api/productos/${id}`)
             .then((response) => response.json())
+
             .then((data) => {
                 setProducto(data);
                 setLoading(false);
+
             })
             .catch((error) => {
+
                 console.error('Error al obtener el producto:', error);
                 setLoading(false);
+
             });
     }, [id]);
 
@@ -31,6 +45,7 @@ function VistaCompra() {
         if (e.target.id === 'envioDomicilio') {
             setEnvio(50);
         } else {
+
             setEnvio(0);
         }
     };
@@ -42,6 +57,7 @@ function VistaCompra() {
     if (!producto) {
         return <div>No se encontró el producto</div>;
     }
+    
 
     // Modifica el cálculo del total para que use el estado
     const subtotal = parseFloat(producto.precio) || 0;
