@@ -1,3 +1,4 @@
+//Esta clase sirve para la informacion de la cuenta
 import React, { useState } from 'react';
 import axios from 'axios';
 
