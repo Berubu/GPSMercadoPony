@@ -18,6 +18,7 @@ CREATE TABLE Vendedor (
 );
 
 
+/*este es el create producto */
 CREATE TABLE Producto (
     idProducto SERIAL PRIMARY KEY,
     nombreProducto VARCHAR(100) NOT NULL,

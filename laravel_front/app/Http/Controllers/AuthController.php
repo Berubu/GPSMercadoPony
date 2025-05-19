@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     /**
-     * Maneja el inicio de sesión del usuario.
+     * Maneja el inicio de sesión del usuario. 
      */
     public function login(Request $request)
     {
