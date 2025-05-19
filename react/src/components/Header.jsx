@@ -1,20 +1,33 @@
+// Informacion del header
 import { useState } from 'react';
+
+
 import { Link, useNavigate } from 'react-router-dom'; // Importa useNavigate para redirección
+
+
+
+
 import logo from '../assets/img/Logo B Transparente.png';
+
+
 
 const HeaderComponent = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
+
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
+
   };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
+
     if (searchQuery.trim() !== '') {
       navigate(`/buscar?q=${encodeURIComponent(searchQuery)}`);
     }
+
   };
 
   // Simulación de autenticación: obtén el usuario de localStorage (ajusta según tu lógica real)
@@ -23,13 +36,17 @@ const HeaderComponent = () => {
   const handleLogout = () => {
     localStorage.removeItem('user');
     navigate('/Login');
+
+
   };
 
   return (
     <header className="flex flex-col sm:flex-row justify-between items-center p-4 text-white bg-custom-red">
       <div className="max-w-xs cursor-pointer mb-4 sm:mb-0">
         <Link to="/">
+
           <img src={logo} alt="MercadoPony" className="w-24 sm:w-auto" />
+          
         </Link>
       </div>
       <form onSubmit={handleSearchSubmit} className="flex items-center w-full sm:w-1/2 relative mb-4 sm:mb-0">
