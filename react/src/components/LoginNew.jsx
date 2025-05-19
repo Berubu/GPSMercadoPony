@@ -1,3 +1,4 @@
+//Login nuevo con los campos correctos
 import React from 'react'
 import '../LoginNew.css'
 const LoginNew = () => {
@@ -10,12 +11,19 @@ const LoginNew = () => {
                 
                 <input type="text" placeholder="Usuario"/>
             </div>
+
+
             <p className="password">Contraseña</p>
+
             <div className="input-box-pass">
+
+
         
                 <input type="password" placeholder="Contraseña"/>
+
             </div>
             <div className="logbutton">
+
             <button type="submit">Ingresar</button>
             </div>
             <div className="register-link">
