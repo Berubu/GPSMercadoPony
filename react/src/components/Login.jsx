@@ -9,8 +9,11 @@ function Login() {
     password: '',
   });
   const [errorMessage, setErrorMessage] = useState('');
+
   const [loading, setLoading] = useState(false); // Estado para carga
+
   const [showPassword, setShowPassword] = useState(false); // Estado para mostrar/ocultar la contraseña
+
   const navigate = useNavigate(); // Para redirigir
 
   const handleChange = (e) => {
@@ -22,8 +25,10 @@ function Login() {
   };
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
     setLoading(true); // Iniciar estado de carga
+
     try {
       const response = await axios.post('http://localhost:8000/api/login', formData);
 
@@ -31,9 +36,11 @@ function Login() {
         localStorage.setItem('user', JSON.stringify(response.data.user));
         navigate('/PerfilUsuario'); // Redirigir a perfil
       } else {
+
         setErrorMessage('Usuario o contraseña incorrectos');
       }
     } catch (error) {
+
       console.error(error);
       if (error.response) {
         setErrorMessage(error.response.data.message || 'Hubo un error en la autenticación');
@@ -42,6 +49,7 @@ function Login() {
       }
     } finally {
       setLoading(false); // Finalizar estado de carga
+
     }
   };
 
@@ -53,9 +61,11 @@ function Login() {
     <div className="flex items-center justify-center min-h-screen bg-custom-gray">
       <form
         onSubmit={handleSubmit}
+
         className="bg-custom-blue p-8 rounded-lg shadow-md w-[30rem] text-white"
       >
         <h2 className="mb-6 text-center text-lg font-bold">
+          
           Ingresa tu e-mail y contraseña para iniciar sesión
         </h2>
         <label className="block mb-2">Email</label> {/* Cambié 'Usuario' por 'Email' */}
