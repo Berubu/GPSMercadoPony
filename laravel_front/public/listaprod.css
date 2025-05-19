@@ -1,0 +1,69 @@
+.contenedor-boton {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente (si el contenedor tiene una altura definida) */
+}
+
+.buttonNuevo {
+    width: 350px; /* Ancho uniforme para todos los botones */
+    color: white;
+    background-color: #072fa8;
+    padding: 10px;
+    margin: 10px auto; /* Centra el botón horizontalmente */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.contenido {
+    background-color: #222222;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+}
+
+.contenido h1 {
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.modal {
+    display: none;  /* Inicialmente oculto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo translúcido */
+}
+
+.modal-dialog {
+    max-width: 500px; /* Ancho del modal */
+    margin: 15% auto; /* Centrar verticalmente */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.modal-header {
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-footer {
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: flex-end;
+}

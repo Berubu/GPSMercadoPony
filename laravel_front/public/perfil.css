@@ -1,0 +1,163 @@
+
+.titulo h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    margin-bottom: 2rem;
+}
+
+.uppper {
+    display: grid;
+    grid-template-columns: auto auto; /* Dos columnas: una para el contenido izquierdo y otra para los botones */
+    align-items: center; /* Centrar los elementos verticalmente */
+    gap: 1rem; /* Espaciado entre columnas */
+}
+
+
+
+.profileImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Imagen redonda */
+    margin-left: 1rem; /* Separar imagen del texto */
+}
+
+.uppper button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttonCF {
+    background-color: #007BFF;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.buttonCF:hover {
+    background-color: #0056b3;
+}
+
+.buttonDel {
+    background-color: #DC3545;
+    color: white;
+}
+
+.buttonDel:hover {
+    background-color: #a71d2a;
+}
+
+/* Para el contenedor de los botones */
+.uppper-buttons {
+    display: flex;
+    flex-direction: column; /* Colocar los botones uno debajo del otro */
+    gap: 0.5rem; /* Espaciado entre botones */
+    justify-self: end; /* Alinear los botones al final (lado derecho) */
+}
+
+.Perfilusuario {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.profile {
+    margin: 50px 0; /* Reducido para mejor alineación */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.EditorP {
+    background-color: #ffffff;
+    text-align: center;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.profileImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    background-color: #2b56d6;
+}
+
+.placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #2b56d6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+
+}
+
+.buttonCF,
+.buttonDel
+ {
+    width: 300px; /* Ancho uniforme para todos los botones */
+    color: white;
+    background-color: #072fa8;
+    padding: 10px;
+    margin: 10px auto; /* Centra el botón horizontalmente */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+
+.buttonProducts,
+.buttonFacturas,
+.buttonCompras,
+.buttonEliminar {
+    width: 350px; /* Ancho uniforme para todos los botones */
+    color: white;
+    background-color: #00002d;
+    padding: 10px;
+    margin: 10px auto; /* Centra el botón horizontalmente */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.buttonEliminar {
+    background-color: red;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.app {
+    background-color: #ffffff;
+    border-radius: 25px; /* Bordes redondeados */
+    padding: 50px; /* Espaciado interior */
+    max-width: 500px; /* Ancho fijo para centrar el contenido */
+    margin: 50px auto; /* Centra el contenido */
+    text-align: center;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+body {
+    background-color: #222222;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+}
+
